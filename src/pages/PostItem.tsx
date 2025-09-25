@@ -369,7 +369,7 @@ const PostItem = () => {
                         id="lat"
                         type="number"
                         step="any"
-                        placeholder="37.7749"
+                        placeholder="28.6139"
                         value={formData.lat}
                         onChange={(e) => handleInputChange("lat", e.target.value)}
                         className="glass-effect border-0"
@@ -383,7 +383,7 @@ const PostItem = () => {
                         id="lng"
                         type="number"
                         step="any"
-                        placeholder="-122.4194"
+                        placeholder="77.2090"
                         value={formData.lng}
                         onChange={(e) => handleInputChange("lng", e.target.value)}
                         className="glass-effect border-0"

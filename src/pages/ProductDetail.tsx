@@ -410,10 +410,10 @@ const ProductDetail = () => {
                 <div className="flex items-center gap-2">
                   <div className="flex items-center text-muted-foreground">
                     <MapPin className="h-4 w-4 mr-1" />
-                    {listing.location 
-                      ? `${listing.location.latitude.toFixed(4)}, ${listing.location.longitude.toFixed(4)}`
-                      : 'Location not available'
-                    }
+                  {listing.location 
+                    ? `${listing.location.latitude.toFixed(6)}, ${listing.location.longitude.toFixed(6)}`
+                    : 'Location not available'
+                  }
                   </div>
                   {listing.location && (
                     <button 

@@ -196,7 +196,7 @@ const Explore = () => {
                       <div className="flex items-center justify-between text-xs text-muted-foreground">
                         <div className="flex items-center">
                           <MapPin className="h-3 w-3 mr-1" />
-                          {item.location ? `${item.location.latitude.toFixed(2)}, ${item.location.longitude.toFixed(2)}` : 'Location not set'}
+                          {item.location ? `${item.location.latitude.toFixed(6)}, ${item.location.longitude.toFixed(6)}` : 'Location not set'}
                         </div>
                       </div>
                       <div className="flex items-center justify-between mt-2">
@@ -322,7 +322,7 @@ const Explore = () => {
                     )}
                   </div>
                   <div className="text-sm text-muted-foreground mb-2">
-                    {selectedItem.location ? `${selectedItem.location.latitude.toFixed(2)}, ${selectedItem.location.longitude.toFixed(2)}` : 'Location not set'}
+                    {selectedItem.location ? `${selectedItem.location.latitude.toFixed(6)}, ${selectedItem.location.longitude.toFixed(6)}` : 'Location not set'}
                   </div>
                   <div className="flex items-center justify-between">
                     <span className="font-semibold text-lg text-primary">
