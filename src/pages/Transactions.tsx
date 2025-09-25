@@ -354,7 +354,7 @@ const Transactions = () => {
                                 <div className="flex items-center gap-2">
                                   <DollarSign className="h-4 w-4" />
                                   <span>
-                                    ${transaction.amount} ({transaction.paymentMode})
+                                    ₹{transaction.amount} ({transaction.paymentMode})
                                   </span>
                                 </div>
                               </div>
@@ -364,7 +364,7 @@ const Transactions = () => {
                           <div className="flex flex-col items-end gap-3">
                             <div className="text-right">
                               <div className="text-2xl font-bold text-primary">
-                                ${transaction.amount}
+                                ₹{transaction.amount}
                               </div>
                               <div className="text-sm text-muted-foreground">
                                 {transaction.type === 'rent' ? 'Total Rent' : 'Swap Value'}
@@ -537,7 +537,7 @@ const Transactions = () => {
                                 </p>
                                 <div className="flex items-center justify-between">
                                   <span className="font-bold text-primary text-sm">
-                                    ${listing.rentPerDay}/day
+                                    ₹{listing.rentPerDay}/day
                                   </span>
                                   <Badge variant="secondary" className="text-xs">
                                     {listing.category}

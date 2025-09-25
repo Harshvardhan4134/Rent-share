@@ -342,7 +342,7 @@ const Profile = () => {
                     />
                   </div>
                   <div className="grid gap-2">
-                    <Label htmlFor="rentPerDay">Rent Per Day ($)</Label>
+                    <Label htmlFor="rentPerDay">Rent Per Day (₹)</Label>
                     <Input
                       id="rentPerDay"
                       type="number"
@@ -423,7 +423,7 @@ const Profile = () => {
                     <DollarSign className="h-4 w-4 text-muted-foreground" />
                     <div>
                       <p className="text-sm text-muted-foreground">Wallet Balance</p>
-                      <p className="font-medium">${user.wallet}</p>
+                      <p className="font-medium">₹{user.wallet}</p>
                     </div>
                   </div>
                 </CardContent>
@@ -496,7 +496,7 @@ const Profile = () => {
                               <h3 className="font-semibold text-sm">{listing.title}</h3>
                               <p className="text-xs text-muted-foreground line-clamp-2">{listing.description}</p>
                               <div className="flex items-center justify-between mt-2">
-                                <span className="font-bold text-primary">${listing.rentPerDay}/day</span>
+                                <span className="font-bold text-primary">₹{listing.rentPerDay}/day</span>
                                 <Badge variant="secondary" className="text-xs">
                                   {listing.category}
                                 </Badge>
@@ -573,7 +573,7 @@ const Profile = () => {
                               <h3 className="font-semibold text-sm">{listing.title}</h3>
                               <p className="text-xs text-muted-foreground line-clamp-2">{listing.description}</p>
                               <div className="flex items-center justify-between mt-2">
-                                <span className="font-bold text-primary">${listing.rentPerDay}/day</span>
+                                <span className="font-bold text-primary">₹{listing.rentPerDay}/day</span>
                                 <Badge variant="secondary" className="text-xs">
                                   {listing.category}
                                 </Badge>

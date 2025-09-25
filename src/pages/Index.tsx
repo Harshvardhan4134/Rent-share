@@ -86,17 +86,17 @@ const Index = () => {
     {
       give: { icon: Laptop, name: "MacBook Pro", category: "Electronics" },
       receive: { icon: Camera, name: "Canon DSLR", category: "Photography" },
-      saving: "$800"
+      saving: "₹800"
     },
     {
       give: { icon: Bike, name: "Mountain Bike", category: "Sports" },
       receive: { icon: Dumbbell, name: "Gym Equipment", category: "Fitness" },
-      saving: "$400"
+      saving: "₹400"
     },
     {
       give: { icon: Watch, name: "Smart Watch", category: "Wearables" },
       receive: { icon: Headphones, name: "Studio Headphones", category: "Audio" },
-      saving: "$200"
+      saving: "₹200"
     }
   ];
 
@@ -339,7 +339,7 @@ const Index = () => {
                 <p className="text-muted-foreground">Items Listed</p>
               </div>
               <div className="animate-fade-in" style={{ animationDelay: '200ms' }}>
-                <div className="text-4xl font-urbanist font-bold gradient-text mb-2">$2M+</div>
+                <div className="text-4xl font-urbanist font-bold gradient-text mb-2">₹2M+</div>
                 <p className="text-muted-foreground">Transactions</p>
               </div>
             </div>

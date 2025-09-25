@@ -139,7 +139,7 @@ const LiveMapComponent: React.FC<LiveMapComponentProps> = ({
                   <div>
                     <h3 style="margin: 0; font-size: 14px; font-weight: 600; color: #1f2937;">${listing.title}</h3>
                     <div style="display: flex; align-items: center; gap: 4px; margin-top: 4px;">
-                      <span style="color: #3b82f6; font-weight: 600; font-size: 16px;">$${listing.rentPerDay}</span>
+                      <span style="color: #3b82f6; font-weight: 600; font-size: 16px;">₹${listing.rentPerDay}</span>
                       <span style="color: #6b7280; font-size: 12px;">/day</span>
                     </div>
                   </div>
@@ -148,7 +148,7 @@ const LiveMapComponent: React.FC<LiveMapComponentProps> = ({
                   <span style="background: #f3f4f6; color: #374151; padding: 2px 6px; border-radius: 4px; font-size: 10px;">${listing.category}</span>
                   ${listing.swapAllowed ? '<span style="background: #dcfce7; color: #166534; padding: 2px 6px; border-radius: 4px; font-size: 10px;">SWAP</span>' : ''}
                 </div>
-                <button onclick="window.selectListing('${listing.id}')" 
+                <button onclick="window.viewListingDetails('${listing.id}')" 
                         style="width: 100%; background: #3b82f6; color: white; border: none; padding: 8px; border-radius: 6px; font-size: 12px; cursor: pointer;">
                   View Details
                 </button>
@@ -159,11 +159,8 @@ const LiveMapComponent: React.FC<LiveMapComponentProps> = ({
             infoWindow.open(map, marker);
             
             // Add global function for button click
-            (window as any).selectListing = (listingId: string) => {
-              const selectedListing = listings.find(l => l.id === listingId);
-              if (selectedListing && onListingSelect) {
-                onListingSelect(selectedListing);
-              }
+            (window as any).viewListingDetails = (listingId: string) => {
+              window.location.href = `/item/${listingId}`;
             };
           });
 

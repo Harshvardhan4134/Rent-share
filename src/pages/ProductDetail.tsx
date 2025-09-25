@@ -18,7 +18,9 @@ import {
   MessageCircle,
   User,
   ChevronLeft,
-  ChevronRight
+  ChevronRight,
+  Navigation,
+  ExternalLink
 } from "lucide-react";
 import { auth } from "@/lib/firebase";
 import { getListing, getUser, createTransactionAndChat, createNotification, Listing, User as UserType } from "@/lib/firestore";
@@ -405,14 +407,32 @@ const ProductDetail = () => {
                   <span className="font-semibold">{owner.rating || 4.5}</span>
                   <span className="text-muted-foreground ml-1">(reviews)</span>
                 </div>
-                <div className="flex items-center text-muted-foreground">
-                  <MapPin className="h-4 w-4 mr-1" />
-                  Location
+                <div className="flex items-center gap-2">
+                  <div className="flex items-center text-muted-foreground">
+                    <MapPin className="h-4 w-4 mr-1" />
+                    {listing.location 
+                      ? `${listing.location.latitude.toFixed(4)}, ${listing.location.longitude.toFixed(4)}`
+                      : 'Location not available'
+                    }
+                  </div>
+                  {listing.location && (
+                    <button 
+                      onClick={() => {
+                        const googleMapsUrl = `https://www.google.com/maps/dir/?api=1&destination=${listing.location.latitude},${listing.location.longitude}`;
+                        window.open(googleMapsUrl, '_blank');
+                      }}
+                      className="flex items-center text-primary hover:text-primary/80 transition-colors cursor-pointer"
+                      title="Get Directions"
+                    >
+                      <Navigation className="h-4 w-4" />
+                      <ExternalLink className="h-3 w-3 ml-1" />
+                    </button>
+                  )}
                 </div>
               </div>
               
               <div className="text-3xl font-urbanist font-bold text-primary mb-6">
-                ${listing.rentPerDay}/day
+                ₹{listing.rentPerDay}/day
               </div>
             </div>
 
@@ -478,15 +498,15 @@ const ProductDetail = () => {
                 <div className="mt-4 p-3 bg-muted/30 rounded-lg">
                   <div className="flex justify-between text-sm mb-2">
                     <span>Daily rate</span>
-                    <span>${listing.rentPerDay}</span>
+                    <span>₹{listing.rentPerDay}</span>
                   </div>
                   <div className="flex justify-between text-sm mb-2">
                     <span>Service fee</span>
-                    <span>$5</span>
+                    <span>₹5</span>
                   </div>
                   <div className="border-t pt-2 flex justify-between font-semibold">
                     <span>Total</span>
-                    <span>${listing.rentPerDay + 5}</span>
+                    <span>₹{listing.rentPerDay + 5}</span>
                   </div>
                 </div>
                 

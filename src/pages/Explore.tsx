@@ -201,7 +201,7 @@ const Explore = () => {
                       </div>
                       <div className="flex items-center justify-between mt-2">
                         <span className="font-semibold text-primary">
-                          ${item.rentPerDay}/day
+                          ₹{item.rentPerDay}/day
                         </span>
                         <span className="text-xs text-muted-foreground">
                           Available: {item.available ? 'Yes' : 'No'}
@@ -326,7 +326,7 @@ const Explore = () => {
                   </div>
                   <div className="flex items-center justify-between">
                     <span className="font-semibold text-lg text-primary">
-                      ${selectedItem.rentPerDay}/day
+                      ₹{selectedItem.rentPerDay}/day
                     </span>
                     <span className="text-xs text-muted-foreground">
                       Available: {selectedItem.available ? 'Yes' : 'No'}

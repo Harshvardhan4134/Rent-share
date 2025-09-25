@@ -211,7 +211,7 @@ const Chat = () => {
                   </div>
                   <div className="flex items-center gap-2 text-muted-foreground">
                     <DollarSign className="h-4 w-4" />
-                    <span>${transaction.amount} ({transaction.paymentMode})</span>
+                    <span>₹{transaction.amount} ({transaction.paymentMode})</span>
                   </div>
                   <div className="flex items-center gap-2 text-muted-foreground">
                     <MapPin className="h-4 w-4" />
